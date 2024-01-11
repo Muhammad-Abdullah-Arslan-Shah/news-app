@@ -12,7 +12,6 @@ export class News extends Component {
   };
   static propTypes = {
     country: PropTypes.string,
-    pageSize: PropTypes.number,
     category: PropTypes.string,
   };
   capitalize = (s) => {
@@ -33,7 +32,7 @@ export class News extends Component {
 
   updateNews = async () => {
     let url = `https://newsapi.org/v2/top-headlines?country=${this.props.country}&category=${this.props.category}&apiKey=3f501550961a464bbc8455e580bcd286&page=${this.state.page}&pageSize=${this.props.pageSize}`;
-    this.state.articles.length == this.state.totalResults ?  this.setState({ loading: false }): this.setState({ loading: true })
+    this.state.articles.length === this.state.totalResults ?  this.setState({ loading: false }): this.setState({ loading: true })
     this.setState({ loading: true });
     let data = await fetch(url);
     let parsedData = await data.json();
