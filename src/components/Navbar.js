@@ -1,16 +1,14 @@
-import React, { Component } from 'react'
+import React from 'react'
 import { Link } from 'react-router-dom';
 
-export class Navbar extends Component {
-  
+const Navbar = (props)=> {
 
-  render() {
-    let {title}= this.props ;
+  
     return (
       <>
       <div className="mb-2">
-      <nav className="navbar navbar-expand-sm navbar-dark bg-danger">
-  <a className="navbar-brand" href="/title"><h4>{title}</h4></a>
+      <nav className="navbar  fixed-top navbar-expand-sm navbar-dark bg-danger">
+  <a className="navbar-brand" href="/title"><h4>{props.title}</h4></a>
   <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span className="navbar-toggler-icon"></span>
   </button>
@@ -65,5 +63,5 @@ export class Navbar extends Component {
       </>
     );
   }
-}
 export default Navbar
+  
